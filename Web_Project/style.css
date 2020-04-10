@@ -1,0 +1,143 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+header{
+    font-size: large;
+    background-color: rgb(23, 156, 23);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+}
+.input{
+    padding: 0.5rem;
+    height: 2.5rem;
+    width: 16rem;
+    border-radius: 8px;
+}
+.search-bar{  
+    margin-bottom: 2rem;
+    background-color: rgb(62, 185, 62);
+
+}
+.search{
+    height: 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+.search_button{
+    margin: .2rem;
+    background-color: rgb(238, 234, 234);
+    height: 2rem;
+    width: 2rem;
+}
+ul{
+    width: 20 rem;
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+    color: white;
+    padding: 2rem;
+}
+li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 3rem;
+    height: 1rem;
+    border-radius: 20px;
+    color: white black;
+}
+.news{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+.news-item{
+    border: black solid;
+    height: 44rem;
+    width: 20rem;  
+}
+.container{
+    max-width: 1024px;
+    margin: auto;
+}
+.image{
+    background-color:rgb(136, 138, 141);
+    height: 17rem;
+    width:19.63rem;
+   
+}
+img{
+    height: 17rem;
+    width: 19.63rem;
+}
+.description{
+    padding: 1rem;
+    height: 22rem;
+    width: 19.63rem;
+}
+.linkpage{
+    background-color: rgb(240, 241, 245);
+    height: 4rem;
+    width: 19.63rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.publish{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    opacity: 0.7;
+}
+.linkbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 2rem;
+    width: 17rem;
+    background-color: rgb(94, 91, 91);
+}
+.bookmark{
+    height: 4rem;
+    width: 3rem;
+    background-color: rgb(106, 106, 245);
+    position: absolute;
+    margin-left: 16.64rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mark{
+    border-width: 0.2rem; 
+    height: 1.2rem;
+    width: 1rem;
+    border-bottom-style: inset;
+}
+.result-count{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 2rem;
+    font-size: x-large;
+    font-weight: bold;
+}
+ 

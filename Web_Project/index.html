@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>NewsApp</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+</head>
+<body onload="search();">
+ <div>
+    <header class="header-color" id="upper">
+        <a class="menu" href="index.html">NEWS SEARCH & BOOKMARKS</a> 
+        <ul class="box">
+            <li><a class="menu" href="index.html">TOP NEWS</a></li>
+            <li><a class="menu" href="bookmarks.html">BOOK MARKS</a></li>
+            <li><button onclick="mode()" class="theme"></button> </li>           
+        </ul>
+    </header>
+    <div class="search-bar" >
+        <div class="search" id="lower">
+            <select class="input" id="country">
+                <option  value="ph" selected="selected">Philippines</option>
+                <option  value="us">United States of America</option>
+                <option  value="gb">United Kingdom</option>
+                <option  value="ca">Canada</option>
+                <option  value="fr">France</option>
+                <option  value="au">Australia</option>
+                <option  value="ar">Argentina</option>
+                <option  value="id">Indonesia</option>
+            </select>
+            <select class="input" id="category" >
+                <option  value="" selected="selected">All Category</option>
+                <option  value="business">Business</option>
+                <option  value="entertainment">Entertainment</option>
+                <option  value="general">General</option>
+                <option  value="health">Health</option>
+                <option  value="science">Science</option>
+                <option  value="sports">Sports</option>
+                <option  value="technology">Technology</option>
+            </select>
+            <input class="input" type="text" placeholder="Key Word" id="keyword">
+            <button onclick="search()"  class="search_button"></button>
+        </div>    
+    </div>
+    <div id="result-count" class="result-count">Loading...</div>
+    <div class="container">
+        <div class="news">
+         
+        </div>
+    </div>  
+</div>
+    <script src="app.js"></script>
+
+</body>
+</html>
+
