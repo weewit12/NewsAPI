@@ -17,7 +17,19 @@ fetch(URL)
        let newsItem=''
        let newscount=0     
        articles.forEach(article => {
-                                
+            
+          
+          if(localStorage.getItem("Bookmark_list")!==null){ 
+          let list = JSON.parse(localStorage.getItem("Bookmark_list"));
+          var str =  'style="background: rgb(106, 106, 245); border: white solid;"'
+          for(var i=0;i<list.length;i++){
+            if(list[i].url===article.url){
+                 str= 'style="border: rgb(106, 106, 245) solid; background: white;"'          
+               }
+            }
+          }
+    
+                      
            newsItem+=`
         <div class="news-item">
            <div class="image">         

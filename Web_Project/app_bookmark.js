@@ -36,4 +36,23 @@ console.log(newsItem);
  }
 }
 
+function unbook_mark(url){
 
+ if(localStorage.getItem("Bookmark_list")!==null){ 
+ let list = JSON.parse(localStorage.getItem("Bookmark_list"));
+ for(var i=0;i<list.length;i++){
+   if(list[i].url===url){
+    document.getElementById(url).style.background = "rgb(106, 106, 245)";
+    document.getElementById(url).style.border = "white solid";
+      for(var j=i;j<list.length;j++){
+        list[j]=list[j+1];
+      }
+      list.pop();
+      let bookmark_serialized = JSON.stringify(list);
+      localStorage.setItem("Bookmark_list",bookmark_serialized);
+      console.log(JSON.parse(localStorage.getItem("Bookmark_list")))
+      bookmark_list();
+   }
+ }
+ }
+}
