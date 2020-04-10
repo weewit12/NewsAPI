@@ -17,19 +17,7 @@ fetch(URL)
        let newsItem=''
        let newscount=0     
        articles.forEach(article => {
-            
-          
-          if(localStorage.getItem("Bookmark_list")!==null){ 
-          let list = JSON.parse(localStorage.getItem("Bookmark_list"));
-          var str =  'style="background: rgb(106, 106, 245); border: white solid;"'
-          for(var i=0;i<list.length;i++){
-            if(list[i].url===article.url){
-                 str= 'style="border: rgb(106, 106, 245) solid; background: white;"'          
-               }
-            }
-          }
-    
-                      
+                                
            newsItem+=`
         <div class="news-item">
            <div class="image">         
@@ -66,6 +54,59 @@ fetch(URL)
        // handle failed requests here ...
        news.innerHTML=`<div>No Result Found</div>`
    })
+}
+
+function book_mark(news_id,url){
+
+  let mark="no";
+ if(localStorage.getItem("Bookmark_list")!==null){ 
+ let list = JSON.parse(localStorage.getItem("Bookmark_list"));
+ for(var i=0;i<list.length;i++){
+   if(list[i].url===url){
+    mark="yes"
+    document.getElementById(url).style.background = "rgb(106, 106, 245)";
+    document.getElementById(url).style.border = "white solid";
+      for(var j=i;j<list.length;j++){
+        list[j]=list[j+1];
+      }
+      list.pop();
+      let bookmark_serialized = JSON.stringify(list);
+      localStorage.setItem("Bookmark_list",bookmark_serialized);
+      console.log(JSON.parse(localStorage.getItem("Bookmark_list")))
+   }
+ }
+ }
+ if(mark==="no"){
+ let bookmark = []
+ if(JSON.parse(localStorage.getItem("Bookmark_list"))!==null){
+    bookmark=JSON.parse(localStorage.getItem("Bookmark_list"));
+    bookmark.push({
+    urlToImage: article_list[news_id].urlToImage,
+    title: article_list[news_id].title,
+    name: article_list[news_id].source.name,
+    publishedAt: (article_list[news_id].publishedAt).substr(0,10),
+    description: article_list[news_id].description,
+    url: article_list[news_id].url,
+  }) 
+ }
+ else{
+    bookmark[0]={
+    urlToImage: article_list[news_id].urlToImage,
+    title: article_list[news_id].title,
+    name: article_list[news_id].source.name,
+    publishedAt: (article_list[news_id].publishedAt).substr(0,10),
+    description: article_list[news_id].description,
+    url: article_list[news_id].url,
+  }
+ }
+let bookmark_serialized = JSON.stringify(bookmark);
+  localStorage.setItem("Bookmark_list",bookmark_serialized);
+  console.log(JSON.parse(localStorage.getItem("Bookmark_list")));   
+  document.getElementById(url).style.border = "rgb(106, 106, 245) solid";
+  document.getElementById(url).style.background = "white";
+  console.log(url)
+}
+
 }
 
 function mode(){

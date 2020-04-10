@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>NewsApp</title>
+</head>
+<body onload="bookmark_list();">
+    <header class="header-color" id="upper">
+        <a class="menu" href="index.html">NEWS SEARCH & BOOKMARKS</a> 
+        <ul class="box">
+            <li><a class="menu" href="#">TOP NEWS</a></li>
+            <li><a class="menu" href="#">BOOK MARKS</a></li>
+            <li><button onclick="mode()" class="theme"></button>  </li>           
+        </ul>
+    </header>
+    <div style="height: 1.5rem;"></div>
+    <div id="result-count" class="result-count">Loading...</div>
+    <div class="container">
+        <div class="news">
+         
+        </div>
+    </div> 
+    <script src="app_bookmark.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
