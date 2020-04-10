@@ -68,3 +68,36 @@ fetch(URL)
    })
 }
 
+function mode(){
+var element = document.body;
+element.classList.toggle("dark-mode");
+
+var element = document.getElementById("upper");
+
+if (element.classList) { 
+  element.classList.toggle("dark-mode");
+} else {
+  var classes = element.className.split(" ");
+  var i = classes.indexOf("dark-mode");
+
+  if (i >= 0) 
+    classes.splice(i, 1);
+  else 
+    classes.push("dark-mode");
+    element.className = classes.join(" "); 
+}
+var element = document.getElementById("lower");
+
+if (element.classList) { 
+    element.classList.toggle("dark-mode");
+  } else {
+    var classes = element.className.split(" ");
+    var i = classes.indexOf("dark-mode");
+  
+    if (i >= 0) 
+      classes.splice(i, 1);
+    else 
+      classes.push("dark-mode");
+      element.className = classes.join(" "); 
+  }
+}  

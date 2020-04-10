@@ -8,6 +8,14 @@
     list-style: none;
 }
 
+.dark-mode{
+    transition: .4s;
+    background-color: black;
+    color: white;
+    border: white;
+    
+}
+
 
 header{
     font-size: large;
